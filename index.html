@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Алия Токбаева — Түйіндеме</title>
+  <style>
+    :root {
+      --blue: #1B1756;
+      --pink: #D98BA8;
+      --background: #faf8fb;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--background);
+      color: var(--blue);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; }
+
+    header {
+      background: var(--blue);
+      color: white;
+      padding: 22px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    header strong { font-size: 20px; }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover { color: var(--pink); }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      align-items: center;
+      gap: 55px;
+      padding: 75px 0;
+    }
+
+    .label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(46px, 7vw, 76px);
+      line-height: 1.1;
+      margin: 20px 0;
+    }
+
+    h1 span { color: #a64f73; }
+
+    .position {
+      font-size: 23px;
+      font-weight: 600;
+    }
+
+    .intro {
+      color: #625e78;
+      max-width: 500px;
+    }
+
+    .photo {
+      width: 100%;
+      height: 430px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 120px 16px 120px 16px;
+      border: 8px solid white;
+      box-shadow: 18px 18px 0 var(--pink);
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 25px;
+      background: var(--blue);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    .button:hover { background: #373078; }
+
+    section {
+      padding: 45px 0;
+      border-bottom: 1px solid #e0dce8;
+      scroll-margin-top: 20px;
+    }
+
+    h2 {
+      font-size: 30px;
+      line-height: 1.3;
+      margin: 0 0 25px;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+
+    p { margin: 10px 0; }
+
+    .muted { color: #625e78; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tags span {
+      background: #f0dce5;
+      padding: 9px 15px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .research {
+      background: var(--blue);
+      color: white;
+      border-radius: 20px;
+      padding: 35px;
+    }
+
+    .research h2 { color: #edb4cb; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .stats strong {
+      display: block;
+      font-size: 36px;
+      color: #edb4cb;
+      line-height: 1.3;
+    }
+
+    .stats span { font-size: 13px; }
+
+    li { margin-bottom: 12px; }
+
+    .item {
+      border-left: 3px solid var(--pink);
+      padding: 4px 0 4px 22px;
+      margin-bottom: 26px;
+    }
+
+    .date {
+      font-size: 13px;
+      font-weight: 700;
+      color: #955075;
+    }
+
+    .publication {
+      background: #f3e5ec;
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .languages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .languages div {
+      background: white;
+      border: 1px solid #e0dce8;
+      border-radius: 10px;
+      padding: 18px 25px;
+    }
+
+    .languages small {
+      display: block;
+      color: #625e78;
+    }
+
+    .contact {
+      margin: 45px 0;
+      padding: 35px;
+      background: var(--pink);
+      border-radius: 20px;
+    }
+
+    .contact a { overflow-wrap: anywhere; }
+
+    .contact p { margin: 14px 0; }
+
+    .print-button {
+      background: var(--blue);
+      color: white;
+      border: 0;
+      border-radius: 8px;
+      padding: 13px 20px;
+      cursor: pointer;
+      font: inherit;
+      margin-top: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+      color: #625e78;
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid #a64f73;
+      outline-offset: 5px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav { gap: 15px; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 40px 0;
+        gap: 35px;
+      }
+
+      .photo {
+        height: 390px;
+        max-width: 380px;
+        margin: 0 auto 20px;
+      }
+
+      h2 { font-size: 26px; }
+
+      .stats { grid-template-columns: 1fr; }
+
+      .research, .contact { padding: 25px; }
+
+      main { padding: 0 20px; }
+    }
+
+    @media print {
+      body { background: white; font-size: 11px; }
+
+      header, .button, .print-button, footer {
+        display: none;
+      }
+
+      main { max-width: none; }
+
+      .hero {
+        grid-template-columns: 2fr 1fr;
+        padding: 15px 0;
+        gap: 25px;
+      }
+
+      h1 { font-size: 36px; }
+
+      .position { font-size: 17px; }
+
+      .photo {
+        height: 180px;
+        border-radius: 10px;
+        box-shadow: none;
+      }
+
+      section {
+        padding: 20px 0;
+        break-inside: avoid;
+      }
+
+      h2 { font-size: 22px; }
+
+      .research, .publication, .contact {
+        background: white;
+        color: var(--blue);
+        padding: 15px;
+        border: 1px solid #ddd;
+      }
+
+      .research h2, .stats strong {
+        color: var(--blue);
+      }
+
+      .stats { margin: 15px 0; }
+
+      .stats strong { font-size: 25px; }
+
+      .contact { margin: 20px 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <strong>Алия Токбаева</strong>
+    <nav aria-label="Негізгі мәзір">
+      <a href="#about">Мен туралы</a>
+      <a href="#research">Зерттеу</a>
+      <a href="#experience">Тәжірибе</a>
+      <a href="#contact">Байланыс</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="label">Жеке түйіндеме</div>
+        <h1>Алия<br><span>Токбаева</span></h1>
+        <p class="position">ГАЖ және ЖҚЗ инженері</p>
+        <p class="intro">
+          Кеңістіктік талдау, спутниктік деректерді өңдеу
+          және биоалуантүрлілікті зерттеу.
+        </p>
+        <p class="muted">Астана, Қазақстан</p>
+        <a class="button" href="#contact">Хабарласу ↗</a>
+      </div>
+
+      <img class="photo" src="aliya.jpg"
+           alt="Алия Токбаева">
+    </section>
+
+    <section id="about">
+      <div class="label">01 / Мен туралы</div>
+      <h2>Кеңістіктік деректер арқылы табиғатты зерттеймін.</h2>
+      <p>
+        Мен — кеңістіктік талдау және спутниктік деректерді
+        өңдеу саласында зерттеу тәжірибесі бар географпын.
+        ArcGIS ArcMap, QGIS және Google Earth Engine
+        бағдарламаларымен жұмыс істеймін. GEE ортасында
+        JavaScript қолданамын.
+      </p>
+      <p>
+        Қазақстанның дала аймағындағы 22 ерекше қорғалатын
+        табиғи аумақты Жерді қашықтан зондтау әдістерімен
+        дербес зерттедім. Биоалуантүрлілікті бағалау
+        жөніндегі жарияланған ғылыми мақаланың
+        бірлескен авторымын.
+      </p>
+    </section>
+
+    <section>
+      <div class="label">02 / Кәсіби дағдылар</div>
+      <h2>Құралдар мен әдістер</h2>
+      <div class="tags">
+        <span>ArcGIS ArcMap</span>
+        <span>QGIS</span>
+        <span>Google Earth Engine</span>
+        <span>JavaScript — GEE</span>
+        <span>Sentinel-2</span>
+        <span>NDVI есептеу</span>
+        <span>Кеңістіктік талдау</span>
+        <span>Өсімдік жамылғысын жіктеу</span>
+        <span>Картографиялық визуализация</span>
+        <span>Copernicus</span>
+        <span>EarthExplorer</span>
+        <span>Зерттеу деректерін жүйелеу</span>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="research">
+        <div class="label">03 / Зерттеу тәжірибесі</div>
+        <h2>
+          Қазақстанның дала аймағындағы ЕҚТА-ның
+          биогеографиялық ерекшеліктері
+        </h2>
+        <p>
+          Дипломдық зерттеу · Л. Н. Гумилев атындағы ЕҰУ · 2025
+        </p>
+
+        <div class="stats">
+          <div>
+            <strong>22</strong>
+            <span>зерттелген ЕҚТА</span>
+          </div>
+          <div>
+            <strong>≈47 900 км²</strong>
+            <span>талданған аумақ</span>
+          </div>
+          <div>
+            <strong>5</strong>
+            <span>өсімдік жамылғысының класы</span>
+          </div>
+        </div>
+
+        <ul>
+          <li>
+            ArcGIS ArcMap және QGIS көмегімен ЕҚТА-ға
+            кеңістіктік талдау жүргіздім.
+          </li>
+          <li>
+            Sentinel-2 суреттерін өңдеп, қызыл және жақын
+            инфрақызыл арналар бойынша NDVI есептедім.
+          </li>
+          <li>
+            Өсімдік жамылғысын бес класқа жіктедім.
+          </li>
+          <li>
+            Әр ЕҚТА үшін кластардың ауданын және NDVI
+            көрсеткіші 0,3-тен жоғары аумақтардың үлесін
+            анықтап, картографиялық материалдар әзірледім.
+          </li>
+          <li>
+            Биоалуантүрлілікті салыстырмалы бағалау үшін
+            CIBI кешенді индексін қолдандым. Нәтижелер
+            жарияланған ғылыми мақалада ұсынылды.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="label">04 / Білім</div>
+      <h2>Академиялық білімім</h2>
+
+      <div class="item">
+        <div class="date">
+          Күтілетін бітіру жылы — 2027
+        </div>
+        <h3>География магистратурасы · M084</h3>
+        <p class="muted">
+          Л. Н. Гумилев атындағы Еуразия ұлттық университеті
+        </p>
+      </div>
+
+      <div class="item">
+        <div class="date">2025</div>
+        <h3>География бакалавриаты · 6B05205</h3>
+        <p class="muted">
+          Л. Н. Гумилев атындағы Еуразия ұлттық университеті
+        </p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="label">05 / Жұмыс тәжірибесі</div>
+      <h2>Кәсіби жолым</h2>
+
+      <div class="item">
+        <div class="date">2025–2026</div>
+        <h3>География оқытушысы</h3>
+        <p class="muted">Jas Education</p>
+      </div>
+
+      <div class="item">
+        <div class="date">2023–2026</div>
+        <h3>География оқытушысы</h3>
+        <p class="muted">«Алтын белги»</p>
+      </div>
+
+      <div class="item">
+        <div class="date">2021</div>
+        <h3>Халық санағы бойынша қоғамдық қызметкер</h3>
+        <p class="muted">
+          Қарағанды облысының Статистика бюросы
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="label">06 / Ғылыми жарияланым</div>
+      <h2>Ғылымға қосқан үлесім</h2>
+
+      <article class="publication">
+        <h3>
+          Дала зонасындағы ерекше қорғалатын табиғи
+          аумақтардың биоалуантүрлілігін бағалау:
+          CIBI әдістемесі
+        </h3>
+        <p>Зинабдин Н.Б., Токбаева А.Е., Айтқұл А.Ж.</p>
+        <p class="muted">
+          ҚазҰУ Хабаршысы. География сериясы.
+          80(1), 2026.
+        </p>
+      </article>
+    </section>
+
+    <section>
+      <div class="label">07 / Тілдер</div>
+      <h2>Тілдік дағдылар</h2>
+      <div class="languages">
+        <div>Қазақ тілі</div>
+        <div>Орыс тілі</div>
+        <div>
+          Ағылшын тілі
+          <small>Pre-Intermediate</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="label">08 / Байланыс</div>
+      <h2>Байланыста болайық!</h2>
+      <p><strong>Алия Токбаева Ерлановна</strong></p>
+      <p>Астана, Қазақстан</p>
+      <p>
+        Телефон:
+        <a href="tel:+77085809456">+7 708 580 94 56</a>
+      </p>
+      <p>
+        Электрондық пошта:
+        <a href="mailto:aliqozeet@gmail.com">
+          aliqozeet@gmail.com
+        </a>
+      </p>
+      <button class="print-button" onclick="window.print()">
+        Түйіндемені басып шығару
+      </button>
+    </section>
+  </main>
+
+  <footer>Алия Токбаева · Жеке түйіндеме</footer>
+</body>
+</html>
